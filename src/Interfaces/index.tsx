@@ -9,8 +9,9 @@ export interface Iprop {
     title: string;
   };
 
-  thumbnail: {
-    id: number;
-    url: string;
-  };
+  thumbnail:string 
+   
+ 
+      
+  url: string;
 }
