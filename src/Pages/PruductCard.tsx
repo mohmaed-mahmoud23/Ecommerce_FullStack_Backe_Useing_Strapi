@@ -4,9 +4,7 @@ import { Button, Card, Image, Text } from "@chakra-ui/react";
 import { Link } from "react-router";
 
 const PruductCard = ({ thumbnail, desecription, price }: Iprop) => {
-  const imageUrl = `${import.meta.env.VITE_SERVER_URL}${
-    thumbnail?.[0]?.url
-  }`;
+  const imageUrl = `${import.meta.env.VITE_SERVER_URL}${thumbnail?.[0]?.url}`;
 
   return (
     <div>

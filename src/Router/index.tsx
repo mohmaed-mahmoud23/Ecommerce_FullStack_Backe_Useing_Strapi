@@ -6,6 +6,7 @@ import {
 import Home from "../Pages/Home";
 
 import PruductPages from "../Pages/PruductPages";
+import Login from "../Auth/Login";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -13,6 +14,7 @@ const router = createBrowserRouter(
       <Route>
         <Route index element={<Home />} />
         <Route path="/Prudact" element={<PruductPages />} />
+        <Route path="/Login" element={<Login />} />
       </Route>
     </>
   )

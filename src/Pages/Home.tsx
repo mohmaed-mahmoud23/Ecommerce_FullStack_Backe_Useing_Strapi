@@ -1,8 +1,13 @@
+import  Navbar from "../Layout/Navbar"
+import Login from "../Auth/Login"
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div>
+    <Navbar/>
+    <Login/>
+    </div>
+  );
+};
 
-export default Home
+export default Home;
