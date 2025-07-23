@@ -43,10 +43,10 @@ export function Navbar() {
         <NavbarLink href="#" active>
           Home
         </NavbarLink>
-        <NavbarLink href="#">About</NavbarLink>
+        <NavbarLink href="/Prudact">Prudact</NavbarLink>
         <NavbarLink href="#">Services</NavbarLink>
         <NavbarLink href="#">Pricing</NavbarLink>
-        <NavbarLink href="#">Contact</NavbarLink>
+        <NavbarLink href="/Login">Login</NavbarLink>
       </NavbarCollapse>
     </FlowbiteNavbar>
   );

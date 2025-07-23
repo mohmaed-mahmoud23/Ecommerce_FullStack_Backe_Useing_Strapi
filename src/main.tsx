@@ -10,6 +10,7 @@ import { Provider as UIProvider } from "../src/components/ui/provider"; // لو 
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { store } from "./app/store"
+import { ToastContainer } from "react-toastify";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -25,6 +26,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <ReduxProvider store={store}>
         <QueryClientProvider client={queryClient}>
           <App />
+          <ToastContainer position="top-center" autoClose={3000} />
+          {/* ✅ التوست */}
         </QueryClientProvider>
       </ReduxProvider>
     </UIProvider>

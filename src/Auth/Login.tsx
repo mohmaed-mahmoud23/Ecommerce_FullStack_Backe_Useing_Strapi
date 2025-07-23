@@ -5,7 +5,7 @@ import { useState, type ChangeEvent } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 export function Login() {
-  const { data, error, loading } = useSelector(selectLogin);
+  const {loading } = useSelector(selectLogin);
   const disbatch = useDispatch<AppDispatch>();
   const [user, setUser] = useState({
     identifier: "",
@@ -45,7 +45,7 @@ export function Login() {
       disbatch(userLogin(user));
     }
   };
-
+console.log(user)
   return (
     <form
       onSubmit={handleSubmit}

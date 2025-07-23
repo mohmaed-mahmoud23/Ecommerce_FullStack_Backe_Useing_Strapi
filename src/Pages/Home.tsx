@@ -1,11 +1,11 @@
-import  Navbar from "../Layout/Navbar"
-import Login from "../Auth/Login"
+import Navbar from "../Layout/Navbar";
+import Login from "../Auth/Login";
 
 const Home = () => {
   return (
     <div>
-    <Navbar/>
-    <Login/>
+      <Navbar />
+      <Login />
     </div>
   );
 };
