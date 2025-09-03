@@ -8,16 +8,19 @@ import Home from "../Pages/Home";
 import PruductPages from "../Pages/PruductPages";
 import Login from "../Auth/Login";
 import AppLayout from "../Layout/AppLayout";
+import CookiServes from "../servers/CookiServes";
+
+const token = CookiServes.get("jwt");
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route>
-        <Route path="/" element={<AppLayout/>}>
+        <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />} />
           <Route path="/Prudact" element={<PruductPages />} />
+        <Route path="/Login" element={<Login isAsuntketde={token}/>} />
         </Route>
-          <Route path="/Login" element={<Login />} />
       </Route>
     </>
   )

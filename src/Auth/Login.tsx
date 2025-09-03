@@ -3,9 +3,12 @@ import type { AppDispatch } from "@/app/store";
 import { Button, Checkbox, Label, TextInput } from "flowbite-react";
 import { useState, type ChangeEvent } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
-export function Login() {
-  const {loading } = useSelector(selectLogin);
+import { Navigate } from "react-router";
+interface Iprop {
+  isAsuntketde: String;
+}
+export function Login({ isAsuntketde }: Iprop) {
+  const { loading } = useSelector(selectLogin);
   const disbatch = useDispatch<AppDispatch>();
   const [user, setUser] = useState({
     identifier: "",
@@ -16,12 +19,12 @@ export function Login() {
     identifier: false,
     password: false,
   });
+  if (isAsuntketde) return <Navigate to={"/"} />;
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
 
-    // شيل رسالة الخطأ أول ما المستخدم يكتب
     setShowError({ ...showError, [name]: false });
   };
 
@@ -45,7 +48,7 @@ export function Login() {
       disbatch(userLogin(user));
     }
   };
-console.log(user)
+  console.log(user);
   return (
     <form
       onSubmit={handleSubmit}
