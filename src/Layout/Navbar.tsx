@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+import { Cartselector } from "../app/Fetcher/Cart";
 import CookiServes from "../servers/CookiServes";
 import {
   Avatar,
@@ -14,13 +16,17 @@ import {
 export function Navbar() {
   const token = CookiServes.get("jwt");
 
+  const { cart } = useSelector(Cartselector);
+
   const LogoutHandelr = () => {
     CookiServes.remove("jwt");
-     window.location.reload()
+    window.location.reload();
   };
   return (
     <FlowbiteNavbar fluid rounded>
       <div className="flex md:order-2">
+        <button className="mr-2"> Cart[{cart.length}]</button>
+
         {token ? (
           <>
             <Dropdown

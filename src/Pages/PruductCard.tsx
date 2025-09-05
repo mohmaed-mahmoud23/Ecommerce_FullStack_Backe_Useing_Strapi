@@ -2,10 +2,22 @@
 import type { Iprop } from "@/Interfaces";
 import { Button, Card, Image, Text } from "@chakra-ui/react";
 import { Link } from "react-router";
-
+import { type AppDispatch } from "../app/store";
+import { Addtocard } from "../app/Fetcher/Cart";
+import { useDispatch } from "react-redux";
 const PruductCard = ({ thumbnail, desecription, price }: Iprop) => {
-  const imageUrl = `${import.meta.env.VITE_SERVER_URL}${thumbnail?.[0]?.url}`;
+  const dispatch = useDispatch<AppDispatch>();
 
+  const imageUrl = `${import.meta.env.VITE_SERVER_URL}${thumbnail?.[0]?.url}`;
+  const apro = () => {
+    dispatch(
+      Addtocard({
+        desecription,
+        price,
+        thumbnail,
+      })
+    );
+  };
   return (
     <div>
       <Card.Root
@@ -43,9 +55,16 @@ const PruductCard = ({ thumbnail, desecription, price }: Iprop) => {
           </Text>
         </Card.Body>
         <Card.Footer gap="2">
-          <Link to="/Prudact/1" style={{ width: "100%" }}>
-            <Button w="full" size="xl" mt="6px" variant="outline" mx="auto">
-              View Details
+          <Link to="" style={{ width: "100%" }}>
+            <Button
+              onClick={apro}
+              w="full"
+              size="xl"
+              mt="6px"
+              variant="outline"
+              mx="auto"
+            >
+              Buy
             </Button>
           </Link>
         </Card.Footer>

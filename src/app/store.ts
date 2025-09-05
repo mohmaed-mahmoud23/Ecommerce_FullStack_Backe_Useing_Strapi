@@ -1,8 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import LoginSlice from "./Fetcher/LoginSlice"
+import  CartSlice  from './Fetcher/Cart'
 export const store = configureStore({
   reducer: {
-    Logdin:LoginSlice
+    Logdin:LoginSlice,
+    cart:CartSlice
+    
   },
 })
 
