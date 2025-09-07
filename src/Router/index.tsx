@@ -9,7 +9,7 @@ import PruductPages from "../Pages/PruductPages";
 import Login from "../Auth/Login";
 import AppLayout from "../Layout/AppLayout";
 import CookiServes from "../servers/CookiServes";
-
+import { CardDrower } from "../Pages/CardDrower";
 const token = CookiServes.get("jwt");
 
 const router = createBrowserRouter(
@@ -18,8 +18,9 @@ const router = createBrowserRouter(
       <Route>
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />} />
-          <Route path="/Prudact" element={<PruductPages />} />
-        <Route path="/Login" element={<Login isAsuntketde={token}/>} />
+          <Route path="/Drower" element={<CardDrower isAsuntketde={token} />} />
+          <Route path="/Prudact" element={<PruductPages />} />!
+          <Route path="/Login" element={<Login isAsuntketde={token} />} />
         </Route>
       </Route>
     </>

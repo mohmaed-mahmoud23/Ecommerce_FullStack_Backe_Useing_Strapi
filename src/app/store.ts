@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import LoginSlice from "./Fetcher/LoginSlice"
 import  CartSlice  from './Fetcher/Cart'
+import CartSliceDrower  from './Fetcher/GlopalSlice'
 export const store = configureStore({
   reducer: {
     Logdin:LoginSlice,
-    cart:CartSlice
+    cart:CartSlice,
+    CartCartSliceDrower:CartSliceDrower
     
   },
 })

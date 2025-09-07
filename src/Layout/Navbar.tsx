@@ -1,8 +1,9 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Cartselector } from "../app/Fetcher/Cart";
 import CookiServes from "../servers/CookiServes";
 import {
   Avatar,
+  Button,
   Dropdown,
   DropdownDivider,
   DropdownHeader,
@@ -12,11 +13,16 @@ import {
   NavbarLink,
   NavbarToggle,
 } from "flowbite-react";
+import { isopenCardDeowerAction } from "../app/Fetcher/GlopalSlice";
+import type { AppDispatch } from "@/app/store";
+import { CardDrower } from "../Pages/CardDrower";
 
 export function Navbar() {
   const token = CookiServes.get("jwt");
+  const disbatch = useDispatch<AppDispatch>();
 
   const { cart } = useSelector(Cartselector);
+  const Open = () => disbatch(isopenCardDeowerAction());
 
   const LogoutHandelr = () => {
     CookiServes.remove("jwt");
@@ -25,8 +31,10 @@ export function Navbar() {
   return (
     <FlowbiteNavbar fluid rounded>
       <div className="flex md:order-2">
-        <button className="mr-2"> Cart[{cart.length}]</button>
-
+        <div className="flex items-center justify-center">
+          <Button onClick={Open}>Cart[{cart.length}]</Button>
+        </div>
+        <CardDrower />
         {token ? (
           <>
             <Dropdown

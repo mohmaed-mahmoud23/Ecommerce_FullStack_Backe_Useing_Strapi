@@ -30,6 +30,6 @@ state.cart=[...state.cart,action.payload]
 export const { Addtocard } = CartSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
-export const  Cartselector =({cart ,}:RootState)=>cart
+export const  Cartselector =({cart }:RootState)=>cart
 
 export default CartSlice.reducer
