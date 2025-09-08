@@ -1,23 +1,32 @@
-// import type { Iprop } from "@/Interfaces";
 import type { Iprop } from "@/Interfaces";
 import { Button, Card, Image, Text } from "@chakra-ui/react";
-import { Link } from "react-router";
 import { type AppDispatch } from "../app/store";
 import { Addtocard } from "../app/Fetcher/Cart";
 import { useDispatch } from "react-redux";
-const PruductCard = ({ thumbnail, desecription, price }: Iprop) => {
+
+const ProductCard = (props: Iprop) => {
   const dispatch = useDispatch<AppDispatch>();
+  const { id, title, desecription, price, thumbnail, stoke } = props; // ✅ خد كل props
 
   const imageUrl = `${import.meta.env.VITE_SERVER_URL}${thumbnail?.[0]?.url}`;
+
   const apro = () => {
     dispatch(
       Addtocard({
+        id,
+        title,
         desecription,
         price,
+        stoke,
+
+        imageUrl: imageUrl ?? "",
+        quantity: 1,
         thumbnail,
+        url: "",
       })
     );
   };
+
   return (
     <div>
       <Card.Root
@@ -37,40 +46,30 @@ const PruductCard = ({ thumbnail, desecription, price }: Iprop) => {
         />
         <Card.Body gap="2">
           <Card.Title textAlign={"center"}>{desecription}</Card.Title>
-          <Card.Description
-            textAlign={"center"}
-            fontSize={"sm"}
-            color={"purple.500"}
-            borderRadius={"lg"}
-          >
-            {}
-          </Card.Description>
           <Text
             textStyle="2xl"
             fontWeight="medium"
             letterSpacing="tight"
             mt="2"
           >
-            ${price}
+            {stoke}${price}
           </Text>
         </Card.Body>
         <Card.Footer gap="2">
-          <Link to="" style={{ width: "100%" }}>
-            <Button
-              onClick={apro}
-              w="full"
-              size="xl"
-              mt="6px"
-              variant="outline"
-              mx="auto"
-            >
-              Buy
-            </Button>
-          </Link>
+          <Button
+            onClick={apro}
+            w="full"
+            size="xl"
+            mt="6px"
+            variant="outline"
+            mx="auto"
+          >
+            Buy
+          </Button>
         </Card.Footer>
       </Card.Root>
     </div>
   );
 };
 
-export default PruductCard;
+export default ProductCard;

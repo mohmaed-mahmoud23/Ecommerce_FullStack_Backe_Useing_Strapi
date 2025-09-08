@@ -59,12 +59,13 @@ export function Navbar() {
               <DropdownItem>Earnings</DropdownItem>
               <DropdownDivider />
               <DropdownItem onClick={LogoutHandelr}>Sign out</DropdownItem>{" "}
-              {/* هنا مكانه الصحيح */}
             </Dropdown>
           </>
         ) : (
           <>
-            <NavbarLink href="/Login">Login</NavbarLink> {/* لو مفيش توكن */}
+            <NavbarLink href="/Login">
+              <Button color={"red"}> Login </Button>
+            </NavbarLink>
           </>
         )}
         <NavbarToggle />

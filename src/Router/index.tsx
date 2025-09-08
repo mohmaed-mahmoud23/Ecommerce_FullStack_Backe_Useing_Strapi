@@ -18,7 +18,7 @@ const router = createBrowserRouter(
       <Route>
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />} />
-          <Route path="/Drower" element={<CardDrower isAsuntketde={token} />} />
+          <Route path="/Drower" element={<CardDrower />} />
           <Route path="/Prudact" element={<PruductPages />} />!
           <Route path="/Login" element={<Login isAsuntketde={token} />} />
         </Route>

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router";
 interface Iprop {
   isAsuntketde: String;
+  
 }
 export function Login({ isAsuntketde }: Iprop) {
   const { loading } = useSelector(selectLogin);

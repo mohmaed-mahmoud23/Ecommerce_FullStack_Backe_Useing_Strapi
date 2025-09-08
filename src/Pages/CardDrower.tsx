@@ -5,12 +5,8 @@ import {
 import type { AppDispatch } from "@/app/store";
 import { Drawer, DrawerHeader, DrawerItems } from "flowbite-react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate } from "react-router";
 
-interface Iprop {
-  isAsuntketde: string;
-}
-export const CardDrower = ({ isAsuntketde }: Iprop) => {
+export const CardDrower = () => {
   const { isopenCardDeower } = useSelector(CartselectorDrower);
 
   const disbatch = useDispatch<AppDispatch>();
@@ -18,8 +14,6 @@ export const CardDrower = ({ isAsuntketde }: Iprop) => {
   const close = () => {
     disbatch(onocloseCardDeowerAction());
   };
-
-  if (isAsuntketde) return <Navigate to={"/"} />;
 
   return (
     <>
