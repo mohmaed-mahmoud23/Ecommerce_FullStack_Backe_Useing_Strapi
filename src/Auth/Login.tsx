@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router";
 interface Iprop {
   isAsuntketde: String;
-  
 }
 export function Login({ isAsuntketde }: Iprop) {
   const { loading } = useSelector(selectLogin);
@@ -20,7 +19,7 @@ export function Login({ isAsuntketde }: Iprop) {
     identifier: false,
     password: false,
   });
-  if (isAsuntketde) return <Navigate to={"/"} />;
+  if (isAsuntketde) return <Navigate to={"/Prudact"} />;
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

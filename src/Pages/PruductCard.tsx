@@ -52,7 +52,15 @@ const ProductCard = (props: Iprop) => {
             letterSpacing="tight"
             mt="2"
           >
-            {stoke}${price}
+            {stoke}
+          </Text>
+          <Text
+            textStyle="2xl"
+            fontWeight="medium"
+            letterSpacing="tight"
+            mt="2"
+          >
+            ${price}
           </Text>
         </Card.Body>
         <Card.Footer gap="2">
