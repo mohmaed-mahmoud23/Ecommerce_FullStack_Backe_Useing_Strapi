@@ -10,7 +10,7 @@ const ProductCard = (props: Iprop) => {
 
   const imageUrl = `${import.meta.env.VITE_SERVER_URL}${thumbnail?.[0]?.url}`;
 
-  const apro = () => {
+  const AddToCart = () => {
     dispatch(
       Addtocard({
         id,
@@ -65,7 +65,7 @@ const ProductCard = (props: Iprop) => {
         </Card.Body>
         <Card.Footer gap="2">
           <Button
-            onClick={apro}
+            onClick={AddToCart}
             w="full"
             size="xl"
             mt="6px"
