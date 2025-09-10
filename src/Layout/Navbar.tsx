@@ -16,6 +16,7 @@ import {
 import { isopenCardDeowerAction } from "../app/Fetcher/GlopalSlice";
 import type { AppDispatch } from "@/app/store";
 import { CardDrower } from "../Pages/CardDrower";
+import { Link, NavLink } from "react-router-dom"; // ✅ استيراد React Router
 
 export function Navbar() {
   const token = CookiServes.get("jwt");
@@ -28,6 +29,7 @@ export function Navbar() {
     CookiServes.remove("jwt");
     window.location.reload();
   };
+
   return (
     <FlowbiteNavbar fluid rounded>
       <div className="flex md:order-2">
@@ -54,16 +56,15 @@ export function Navbar() {
                   name@flowbite.com
                 </span>
               </DropdownHeader>
-              <DropdownItem>Dashboard</DropdownItem>
-              <DropdownItem>Settings</DropdownItem>
-              <DropdownItem>Earnings</DropdownItem>
+
               <DropdownDivider />
-              <DropdownItem onClick={LogoutHandelr}>Sign out</DropdownItem>{" "}
+              <DropdownItem onClick={LogoutHandelr}>Sign out</DropdownItem>
             </Dropdown>
           </>
         ) : (
           <>
-            <NavbarLink href="/Login">
+            {/* ✅ Login Link من غير refresh */}
+            <NavbarLink as={Link} to="/Login">
               <Button color={"red"}> Login </Button>
             </NavbarLink>
           </>
@@ -72,13 +73,17 @@ export function Navbar() {
       </div>
 
       <NavbarCollapse className=" ml-9">
-        <NavbarLink href="#" active>
+        {/* ✅ كل اللينكات باستخدام React Router */}
+        <NavbarLink as={NavLink} to="/" end>
           Home
         </NavbarLink>
-        <NavbarLink href="/Prudact">Prudact</NavbarLink>
-        <NavbarLink href="#">Services</NavbarLink>
-        <NavbarLink href="#">Pricing</NavbarLink>
-        <NavbarLink href="/Login">Login</NavbarLink>
+        <NavbarLink as={NavLink} to="/Prudact">
+          Prudact
+        </NavbarLink>
+
+        <NavbarLink as={NavLink} to="/Login">
+          Login
+        </NavbarLink>
       </NavbarCollapse>
     </FlowbiteNavbar>
   );

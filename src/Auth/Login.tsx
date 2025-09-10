@@ -19,7 +19,7 @@ export function Login({ isAsuntketde }: Iprop) {
     identifier: false,
     password: false,
   });
-  if (isAsuntketde) return <Navigate to={"/Prudact"} />;
+  if (isAsuntketde) return <Navigate to={"/"} />;
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

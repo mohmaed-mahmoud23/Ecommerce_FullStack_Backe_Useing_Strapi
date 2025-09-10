@@ -16,7 +16,7 @@ import { Cartselector, RemoveAllCArt } from "../app/Fetcher/Cart";
 import type { Iprop } from "@/Interfaces";
 
 export const CardDrower = (props: Iprop) => {
-  const {...} = props; 
+  const {id} = props; 
   const { isopenCardDeower } = useSelector(CartselectorDrower);
   const { cart } = useSelector(Cartselector);
 

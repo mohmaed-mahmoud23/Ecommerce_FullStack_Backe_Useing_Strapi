@@ -10,7 +10,6 @@ interface CounterState {
 
   
 }
-
 // Define the initial state using that type
 const initialState: CounterState = {
   cart:[],
