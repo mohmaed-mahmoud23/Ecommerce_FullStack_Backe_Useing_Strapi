@@ -9,7 +9,7 @@ import { Provider as ReduxProvider } from "react-redux";
 import { Provider as UIProvider } from "../src/components/ui/provider"; // لو ده مثلاً ShadCN UI
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { store } from "./app/store"
+import { store } from "./app/store";
 import { ToastContainer } from "react-toastify";
 const queryClient = new QueryClient({
   defaultOptions: {

@@ -12,6 +12,7 @@ import CookiServes from "../servers/CookiServes";
 import { CardDrower } from "../Pages/CardDrower";
 import { DachbordAdminPanal } from "../Pages/DachBord/DachbordAdminPanal";
 import Inedx from "../Pages/DachBord/inedx";
+import TableDashpord from "../Pages/DachBord/TableDashpord";
 const token = CookiServes.get("jwt");
 
 const router = createBrowserRouter(
@@ -19,7 +20,7 @@ const router = createBrowserRouter(
     <>
       <Route>
         <Route path="/" element={<AppLayout />}>
-          <Route index element={<Home   />} />
+          <Route index element={<Home />} />
           <Route path="/Drower" element={<CardDrower />} />
           <Route path="/Prudact" element={<PruductPages />} />
           <Route path="/Login" element={<Login isAsuntketde={token} />} />
@@ -27,7 +28,7 @@ const router = createBrowserRouter(
 
         <Route path="/dashBord" element={<DachbordAdminPanal />}>
           <Route index element={<Inedx />} />
-          <Route path="Prudact" element={<h1>Prudact</h1>} />
+          <Route path="Prudact" element={<TableDashpord />} />
           <Route path="catigory" element={<h1>catigory</h1>} />
         </Route>
       </Route>

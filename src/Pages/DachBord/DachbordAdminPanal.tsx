@@ -52,12 +52,12 @@ export const DachbordAdminPanal = () => {
                   <SidebarItem as={Link} to="/dashBord/catigory" icon={HiUsers}>
                     catigory
                   </SidebarItem>
-                  <SidebarItem href="/authentication/sign-in" icon={HiLogin}>
+                  {/* <SidebarItem href="/authentication/sign-in" icon={HiLogin}>
                     Sign in
                   </SidebarItem>
                   <SidebarItem href="/authentication/sign-up" icon={HiPencil}>
                     Sign up
-                  </SidebarItem>
+                  </SidebarItem> */}
                 </SidebarItemGroup>
                 <SidebarItemGroup>
                   <SidebarItem
