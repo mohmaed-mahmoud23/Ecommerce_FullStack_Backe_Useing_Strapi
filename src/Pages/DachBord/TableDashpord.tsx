@@ -1,6 +1,7 @@
 import type { Iprop } from "@/Interfaces";
 import { useGetPrudactApiQuery } from "../../app/service/ApiSlice";
 import {
+  Button,
   Table,
   TableBody,
   TableCell,
@@ -8,8 +9,11 @@ import {
   TableHeadCell,
   TableRow,
 } from "flowbite-react";
+import AlertDilog from "../../Shared/AlertDilog";
+import { useState } from "react";
 
 export function TableDashpord() {
+  const [openModal, setOpenModal] = useState(false);
   const { data, isLoading } = useGetPrudactApiQuery({});
 
   if (isLoading) return <p>Loading...</p>;
@@ -50,18 +54,25 @@ export function TableDashpord() {
               </TableCell>
               <TableCell>${product.price}</TableCell>
               <TableCell>{product.stoke}</TableCell> {/* ✅ صححنا الاسم */}
-              <TableCell>
+              <Button onClick={() => setOpenModal(!openModal)}>
                 <a
                   href="#"
                   className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                 >
                   Edit
                 </a>
-              </TableCell>
+              </Button>
             </TableRow>
           ))}
         </TableBody>
       </Table>
+      <AlertDilog
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+        No={"Yes"}
+        Yes={"No"}
+        TExt="Are You sure Delet This Prudact ? "
+      />
     </div>
   );
 }

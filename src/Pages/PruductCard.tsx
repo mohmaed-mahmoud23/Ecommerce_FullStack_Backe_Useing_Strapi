@@ -18,7 +18,6 @@ const ProductCard = (props: Iprop) => {
         desecription,
         price,
         stoke,
-
         imageUrl: imageUrl ?? "",
         quantity: 1,
         thumbnail,
